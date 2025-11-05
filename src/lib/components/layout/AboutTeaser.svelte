@@ -21,9 +21,9 @@ A minimalist teaser for the about page.
 
 	// Data
 	const teamMember: TeamMember = {
-		name: "Alex Morgan",
-		role: "Founder & CEO",
-		image: "https://www.unc.mn/image-placeholder.svg"
+		name: "Kenneth",
+		role: "Founder",
+		image: "/generated/image-a-professional-founder-in-their-late-30s.webp"
 	};
 </script>
 
@@ -32,7 +32,7 @@ A minimalist teaser for the about page.
 		<div class="relative mx-auto grid max-w-2xl place-items-center gap-16">
 			<ScrollText
 				class="text-title1 text-center"
-				text={`"We're building the future of digital experiences, crafting innovative solutions that transform how people interact with technology in their everyday lives"`}
+				text={`"I watched too many exceptional companies wither not from bad ideas or poor execution, but from something simpler and more preventable: lack of attention at critical moments. We built TendAI because the best founders deserve investors who tend to what they've planted."`}
 			/>
 
 			<!-- Team Member & CTA Section -->
