@@ -6,16 +6,23 @@
 	import CallToAction from "$lib/components/layout/CallToAction.svelte";
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
-	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
+	import CenteredTextOnlyHero from "$lib/components/layout/hero-sections/CenteredTextOnlyHero.svelte";
 </script>
 
-<Hero
-	title="Elevate your business with thoughtful design"
-	subtitle="Solutions that enhance user experience, and improve visual communication."
-	imageSrc="https://www.unc.mn/image-placeholder.svg"
-	generating
+<CenteredTextOnlyHero
+	title="The system of work for venture capital"
+	subtitle="Tend to your portfolio like a gardener tends their garden. Monitor companies continuously, surface follow-on opportunities, and ensure no exceptional founder goes without the attention they need to thrive."
+	imageSrc="/generated/image-a-mid-career-venture-capital-partner-in-.webp"
 />
-<LogoScroller label="" generating />
+<LogoScroller 
+	label="Trusted by leading venture firms"
+	logoUrls={[
+		'https://cdn.brandfetch.io/sequoiacap.com/w/400/h/400/logo',
+		'https://cdn.brandfetch.io/a16z.com/w/400/h/400/logo',
+		'https://cdn.brandfetch.io/firstround.com/w/400/h/400/logo',
+		'https://cdn.brandfetch.io/accel.com/w/400/h/400/logo'
+	]}
+/>
 
 <Summary
 	generating
