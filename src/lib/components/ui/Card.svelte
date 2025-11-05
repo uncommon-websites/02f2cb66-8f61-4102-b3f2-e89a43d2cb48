@@ -23,10 +23,10 @@
 </script>
 
 <article
-	class="bg-card hover:bg-sidebar-primary-foreground hover:text-primary-900 border-border flex flex-col rounded-(--radius) border p-4 px-5 text-pretty transition duration-300 ease-out lg:p-5 lg:px-6 {customClass}"
+	class="group relative flex flex-col overflow-hidden rounded-(--radius-lg) border border-border/50 bg-card/40 p-6 text-pretty backdrop-blur-sm transition-all duration-500 ease-out hover:border-primary/30 hover:bg-card/60 lg:p-8 {customClass}"
 >
 	{#if icon || imageSrc}
-		<div class="mb-8">
+		<div class="mb-6 lg:mb-8">
 			{#if icon && imageSrc}
 				{@const Icon = icon}
 				<div class="relative">
@@ -37,19 +37,17 @@
 						style="border-radius: max(2px, calc(var(--radius) - 1rem));"
 					/>
 					<div
-						class="absolute top-3 left-3 bg-white/90 p-1.5 backdrop-blur-sm"
+						class="absolute top-3 left-3 bg-primary/10 p-2 backdrop-blur-md"
 						style="border-radius: max(2px, calc(var(--radius) - 1.25rem));"
 					>
-						<Icon
-							class="size-4 {iconClass.includes('text-')
-								? iconClass.split(' ').find((c) => c.startsWith('text-'))
-								: 'text-primary'}"
-						/>
+						<Icon class="size-5 text-primary" />
 					</div>
 				</div>
 			{:else if icon}
 				{@const Icon = icon}
-				<Icon class={iconClass} />
+				<div class="inline-flex rounded-(--radius) bg-primary/10 p-3 backdrop-blur-sm">
+					<Icon class="size-6 text-primary transition-transform duration-300 group-hover:scale-110" />
+				</div>
 			{:else if imageSrc}
 				<img
 					src={imageSrc}
@@ -62,9 +60,9 @@
 	{/if}
 
 	<div class:mt-auto={icon || imageSrc}>
-		<h3 class="text-title3 mb-2">
+		<h3 class="text-title3 mb-3 transition-colors duration-300 group-hover:text-primary">
 			{title}
 		</h3>
-		<p class="text-body max-w-prose opacity-60">{description}</p>
+		<p class="text-callout max-w-prose opacity-70">{description}</p>
 	</div>
 </article>

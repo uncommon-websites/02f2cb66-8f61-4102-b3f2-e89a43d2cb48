@@ -66,21 +66,27 @@
 	} = $props();
 </script>
 
-<div class="" {...rest}>
+<div class="relative" {...rest}>
+	<!-- Gradient background -->
+	<div 
+		class="absolute inset-0 -z-10 opacity-20"
+		style="background: radial-gradient(circle at 80% 50%, var(--color-secondary-500) 0%, transparent 60%);"
+	></div>
+	
 	<section class="section-px section-py container mx-auto">
 		<div
-			class="bg-card border-border grid content-start items-center justify-between gap-(--gap) rounded-(--radius) border p-(--gap) text-balance [--gap:--spacing(8)] [--inner-radius:calc(var(--radius)-var(--gap))] [--radius:var(--radius-xl)] lg:grid-cols-[2fr_1fr]"
+			class="bg-card/40 backdrop-blur-sm border-border/50 grid content-start items-center justify-between gap-(--gap) rounded-(--radius) border p-(--gap) text-balance [--gap:--spacing(8)] [--inner-radius:calc(var(--radius)-var(--gap))] [--radius:var(--radius-xl)] lg:grid-cols-[2fr_1fr]"
 		>
 			<div class="items-between grid h-full content-between gap-16">
 				<h2 class="text-title1 mb-3 flex flex-col">
 					<span><AnimateText text={title} /></span>
-					<span class="text-emphasis-low"><AnimateText text={subtitle} /></span>
+					<span class="opacity-60"><AnimateText text={subtitle} /></span>
 				</h2>
 				<div class="flex flex-col items-start justify-start gap-7">
-					<p class="text-headline text-emphasis-low">
+					<p class="text-headline opacity-70">
 						{description}
 					</p>
-					<div class="flex w-full flex-col gap-2 md:flex-row md:flex-wrap">
+					<div class="flex w-full flex-col gap-3 md:flex-row md:flex-wrap">
 						{#each callsToAction as cta}
 							<Button class="w-full md:w-auto" href={cta.href} variant={cta.variant || "primary"}
 								>{cta.label}</Button

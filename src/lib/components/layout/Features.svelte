@@ -33,8 +33,14 @@
 	);
 </script>
 
-<section class="[--gap:--spacing(2)]" {...rest}>
-	<div class="section-px section-py container mx-auto grid">
+<section class="relative [--gap:--spacing(3)]" {...rest}>
+	<!-- Subtle gradient background -->
+	<div 
+		class="absolute inset-0 -z-10 opacity-20"
+		style="background: radial-gradient(circle at 50% 0%, var(--color-primary-500) 0%, transparent 60%);"
+	></div>
+	
+	<div class="section-px section-py container mx-auto grid gap-16 lg:gap-20">
 		<SectionHeader {title} {subtitle} />
 
 		<div class="bento-grid {featureCountClass}">
